@@ -7,7 +7,7 @@ describe("enhancedDate", function ()  {
       expect(enhancedDate.setDate(new Date(2015, 4, 23))).to.be.a("Date");
     });
 
-    it("Should return epoch time: " + (new Date(2015, 4, 23)), function () {
+    it("Should return: " + (new Date(2015, 4, 23)), function () {
       expect(enhancedDate.setDate(new Date(2015, 4, 23))).to.be.deep.equal(new Date(2015, 4, 23));
     });
   });
@@ -19,7 +19,7 @@ describe("enhancedDate", function ()  {
       expect(enhancedDate.getDate()).to.be.a("number");
     });
 
-    it("Should be equal to epoch time: " + (new Date(2015, 4, 23)), function () {
+    it("Should be equal to: " + (new Date(2015, 4, 23)), function () {
       enhancedDate.setDate(new Date(2015, 4, 23));
       expect(enhancedDate.getDate()).to.be.equal((new Date(2015, 4, 23)).getTime());
     });
