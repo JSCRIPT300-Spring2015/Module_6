@@ -15,13 +15,15 @@ describe('enhancedDate', function () {
 
   describe('getDate',function(){
 
+    beforeEach(function(){
+      enhancedDate.setDate(new Date());
+    });
+
     it('Should return a number object if 0 arguments passed',function(){
-       enhancedDate.setDate(new Date());
        expect(enhancedDate.getDate()).to.be.a('Number');
     });
 
     it('should return date object if argument passed is true',function(){
-      enhancedDate.setDate(new Date());
       expect(enhancedDate.getDate(true) instanceof Date).is.ok;
     });
   });
