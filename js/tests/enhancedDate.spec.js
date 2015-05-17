@@ -4,23 +4,25 @@ describe('enhancedDate', function () {
 
   describe('setDate',function(){
 
-    it('should return date object set with today\'s date if 0 objects passed',function(){
-      expect(enhancedDate.setDate().toString()).to.equal(new Date().toString());
+    it('should return date object set with today\'s date if 0 arguments passed',function(){
+      expect(enhancedDate.setDate()).to.equalDate(new Date());
     });
 
-    it('should return date object set with given date object that is passed',function(){
-      expect(enhancedDate.setDate(new Date(2015,1,1)).toString()).to.equal(new Date(2015,1,1).toString());
+    it('should return date object set with the date argument that is passed',function(){
+      expect(enhancedDate.setDate(new Date(2015,1,1))).to.equalDate(new Date(2015,1,1));
     });
   });
 
   describe('getDate',function(){
 
-    it('should return date object set with today\'s date if 0 objects passed',function(){
-      //expect(enhancedDate.setDate().toString()).to.equal(new Date().toString());
+    it('Should return a number object if 0 arguments passed',function(){
+       enhancedDate.setDate(new Date());
+       expect(enhancedDate.getDate()).to.be.a('Number');
     });
 
-    it('should return date object set with given date object that is passed',function(){
-      //expect(enhancedDate.setDate(new Date(2015,1,1)).toString()).to.equal(new Date(2015,1,1).toString());
+    it('should return date object if argument passed is true',function(){
+      enhancedDate.setDate(new Date());
+      expect(enhancedDate.getDate(true) instanceof Date).is.ok;
     });
   });
 
@@ -56,7 +58,7 @@ describe('enhancedDate', function () {
 
     it('should not return January when date is set to 2/1/2015', function () {
       enhancedDate.setDate(new Date(2015,1,1));
-      expect(enhancedDate.getMonthName()).to.not.equal('Janurary');
+      expect(enhancedDate.getMonthName()).to.not.equal('January');
     });
   });
 
@@ -76,7 +78,7 @@ describe('enhancedDate', function () {
   describe('isFuture',function(){
 
     it('should return true if date is set in future',function(){
-      enhancedDate.setDate(new Date(2016,1,1));
+      enhancedDate.setDate(new Date(2020,1,1));
       expect(enhancedDate.isFuture()).is.ok;
     });
 
