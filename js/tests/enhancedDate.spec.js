@@ -67,6 +67,7 @@ describe("enhancedDate", function () {
         it("Should not return a number", function () {
             expect(enhancedDate.getMonthName()).is.not.a("number");
         });
+        
         it("Should return a string", function () {
             expect(enhancedDate.getMonthName()).to.be.a("string");
         });
@@ -90,9 +91,11 @@ describe("enhancedDate", function () {
         it("Should return same value as (new Date.getTime())", function () {
             expect(enhancedDate.getDate()).to.equal(currentDate);
         });
+        
         it("Should be a boolean comparison", function () {
             expect(enhancedDate.isToday()).to.be.a("boolean");
         });
+        
         it("Should be greater than pastDate", function () {
             expect(enhancedDate.getDate()).to.be.above(pastDate);
         });
