@@ -41,7 +41,7 @@ var enhancedDate = (function () {
 
 		initDate();
 
-		return monthNames[_date.getMonth()];
+		return monthNames[_date.getMonth() - 1];
 	}
 
 	function isToday() {
