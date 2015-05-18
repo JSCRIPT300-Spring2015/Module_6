@@ -14,7 +14,13 @@
 		var expect = chai.expect;
 		mocha.setup({
 			ui: "bdd",
-			ignoreLeaks: true
+//            reporter: "HTML",
+//            globals: ["jQuery"],
+//            timeout: 3000,
+//            bail: false,
+//            slow: 2000,
+			ignoreLeaks: true,
+//            grep: ""
 		});
 		window.onload = function () {
 			mocha.run();
