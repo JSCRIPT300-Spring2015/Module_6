@@ -8,7 +8,7 @@ describe('enhancedDate', function () {
       expect(enhancedDate.setDate()).to.equalDate(new Date());
     });
 
-    it('should return date object set with the date argument that is passed',function(){
+    it('should return date object when argument of type Date is passed',function(){
       expect(enhancedDate.setDate(new Date(2015,1,1))).to.equalDate(new Date(2015,1,1));
     });
   });
@@ -35,14 +35,9 @@ describe('enhancedDate', function () {
       expect(enhancedDate.getDayName()).to.equal('Thursday');
     });
 
-    it('should return Saturday when date is set to 5/16/2015', function () {
+    it('should return type string', function () {
       enhancedDate.setDate(new Date(2015,4,16));
-      expect(enhancedDate.getDayName()).to.equal('Saturday');
-    });
-
-    it('should not return Monday when date is set to 2/1/2015', function () {
-      enhancedDate.setDate(new Date(2015,1,1));
-      expect(enhancedDate.getDayName()).to.not.equal('Monday');
+      expect(enhancedDate.getDayName()).to.be.a('string');
     });
   });
 
@@ -53,25 +48,20 @@ describe('enhancedDate', function () {
       expect(enhancedDate.getMonthName()).to.equal('May');
     });
 
-    it('should return April when date is set to 4/16/2015', function () {
+    it('should return type string', function () {
       enhancedDate.setDate(new Date(2015,3,16));
-      expect(enhancedDate.getMonthName()).to.equal('April');
-    });
-
-    it('should not return January when date is set to 2/1/2015', function () {
-      enhancedDate.setDate(new Date(2015,1,1));
-      expect(enhancedDate.getMonthName()).to.not.equal('January');
+      expect(enhancedDate.getMonthName()).to.be.a('string');
     });
   });
 
   describe('isToday',function(){
 
-    it('should return true if date is set to today\'s date',function(){
+    it('should return true if date object set to today\'s date is passed in',function(){
       enhancedDate.setDate(new Date());
       expect(enhancedDate.isToday()).is.ok;
     });
 
-    it('should return false if date is not set to today\'s date',function(){
+    it('should return false if date object not set to today\'s date is passed in',function(){
       enhancedDate.setDate(new Date(2015,1,1));
       expect(enhancedDate.isToday()).is.not.ok;
     });
@@ -79,17 +69,17 @@ describe('enhancedDate', function () {
 
   describe('isFuture',function(){
 
-    it('should return true if date is set in future',function(){
+    it('should return true if date set in future is passed in',function(){
       enhancedDate.setDate(new Date(2020,1,1));
       expect(enhancedDate.isFuture()).is.ok;
     });
 
-    it('should return false if date is set to today',function(){
+    it('should return false if date set to today is passed in',function(){
       enhancedDate.setDate(new Date());
       expect(enhancedDate.isFuture()).is.not.ok;
     });
 
-    it('should return true if date is set in past',function(){
+    it('should return true if date set in past is passed in',function(){
       enhancedDate.setDate(new Date(2013,1,1));
       expect(enhancedDate.isFuture()).is.not.ok;
     });
