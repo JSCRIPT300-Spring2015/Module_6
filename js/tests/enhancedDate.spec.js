@@ -72,7 +72,7 @@ describe("enhancedDate", function () {
 
 	describe("isFuture", function (){
 
-		var today = new Date();
+		var testDate = new Date();
 
 		it("should be a type of boolean", function () {
 		      expect(enhancedDate.isFuture()).to.be.a("boolean");
@@ -80,12 +80,12 @@ describe("enhancedDate", function () {
 
 		it('should return true if passed date set 2 days later from today',function(){		
 			  // add 2 days from today as a future day
-      		  enhancedDate.setDate(today.setTime( today.getTime() + 2 * 86400000 ));
+      		  enhancedDate.setDate(testDate.setTime( testDate.getTime() + 2 * 86400000 ));
       		  expect(enhancedDate.isFuture()).to.be.true;
 		});
 
 		it('should return false if passed date set 2 days ago from today',function(){			  			 
-      		  enhancedDate.setDate(today.setTime( today.getTime() - 2 * 86400000 ));
+      		  enhancedDate.setDate(testDate.setTime( testDate.getTime() - 2 * 86400000 ));
       		  expect(enhancedDate.isFuture()).to.be.false;
 		});
 
