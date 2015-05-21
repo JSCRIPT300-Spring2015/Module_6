@@ -8,7 +8,7 @@ describe("enhancedDate", function () {
 			outcome = enhancedDate.setDate();
 			expect(outcome).to.be.instanceOf(Date);
 		});
-		it("should create new Date object with epoch 100000 from number", function () {
+		it("should create new Date object with epoch 100000", function () {
 			outcome = enhancedDate.setDate(100000);
 			expect(outcome).to.deep.equal(new Date(100000));
 		});
