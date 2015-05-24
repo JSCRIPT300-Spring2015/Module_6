@@ -8,7 +8,7 @@ describe("enhancedDate", function () {
     //test setDate function
     describe("setDate", function () {
         it("should return a new Date Object if nothing passed in", function () {
-        	expect(enhancedDate.setDate()).to.be(new Date());
+        	expect(enhancedDate.setDate()).to.be.instanceOf(new Date());
         });
         it("should return Date object of 2015,6,4 when this is passed in", function () {
         	expect(enhancedDate.setDate(new Date(2015,6,4))).to.deep.equal(new Date(2015,6,4));
