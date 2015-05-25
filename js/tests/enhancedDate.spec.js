@@ -84,14 +84,14 @@ describe("Enhanced Date", function () {
 
 	describe("isFuture", function () {
 
-		it("When no date of today is set, the return value should be true", function () {
+		it("When a future day is set, the return value should be true", function () {
 			var date = new Date();
 			date.setDate(date.getDate() + 1);
 			enhancedDate.setDate(date);
 			expect(enhancedDate.isFuture()).is.ok;
 		});
 
-		it("When a past date is set prior, the return value should be false", function () {
+		it("When today is set, the return value should be false", function () {
 			enhancedDate.setDate(new Date());
 			expect(enhancedDate.isFuture()).is.not.ok;
 		});
