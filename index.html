@@ -6,20 +6,20 @@
 	<link rel="stylesheet" href="js/libs/mocha.css"/>
 </head>
 <body>
-	<div id="mocha"></div>
-	<script src="js/enhancedDate.js"></script>
-	<script src="js/libs/mocha.js"></script>
-	<script src="js/libs/chai.js"></script>
-	<script>
-		var expect = chai.expect;
-		mocha.setup({
-			ui: "bdd",
-			ignoreLeaks: true
-		});
-		window.onload = function () {
-			mocha.run();
-		};
-	</script>
-	<script src="js/tests/enhancedDate.spec.js"></script>
+<div id="mocha"></div>
+<script src="js/enhancedDate.js"></script>
+<script src="js/libs/mocha.js"></script>
+<script src="js/libs/chai.js"></script>
+<script>
+	var expect = chai.expect;
+	mocha.setup({
+		ui: "bdd",
+		ignoreLeaks: true
+	});
+	window.onload = function () {
+		mocha.run();
+	};
+</script>
+<script src="js/tests/enhancedDate.spec.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ var enhancedDate = (function () {
 	var _date = null;
 	var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 	var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
-			'September', 'October', 'November', 'December'];
+		'September', 'October', 'November', 'December'];
 
 	function initDate() {
 
@@ -51,7 +51,7 @@ var enhancedDate = (function () {
 		var today = new Date();
 
 		return (today.getDate() === _date.getDate() && today.getMonth() === _date.getMonth() &&
-				today.getYear() === _date.getYear());
+		today.getYear() === _date.getYear());
 	}
 
 	function isFuture() {
