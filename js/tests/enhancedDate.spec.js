@@ -7,7 +7,7 @@ describe('enhancedDate', function () {
 		});
 
 		it('should return an object identical to the one passed in', function () {
-			expect(enhancedDate.setDate(new Date(2015, 5, 27))).to.be.deep.equal(new Date (2015, 4, 26));
+			expect(enhancedDate.setDate(new Date(2015, 4, 27))).to.be.deep.equal(new Date (2015, 4, 26));
 		});
 	});
 
@@ -25,7 +25,7 @@ describe('enhancedDate', function () {
 	describe('getDayName', function () {
 
 		before(function () {
-			enhancedDate.setDate(new Date(2015, 5, 27));
+			enhancedDate.setDate(new Date(2015, 4, 27));
 		});
 
 		it('should return a string', function () {
@@ -40,7 +40,7 @@ describe('enhancedDate', function () {
 	describe('getMonthName', function () {
 
 		before(function () {
-			enhancedDate.setDate(new Date(2015, 5, 27));
+			enhancedDate.setDate(new Date(2015, 4, 27));
 		});
 
 		it('should return a string', function () {
@@ -61,7 +61,7 @@ describe('enhancedDate', function () {
 		});
 
 		it('should return false if it is not today', function () {
-			enhancedDate.setDate(new Date(2014, 5, 27));
+			enhancedDate.setDate(new Date(2014, 4, 27));
 			expect(enhancedDate.isToday()).to.be.false;
 		});
 	});
@@ -69,11 +69,11 @@ describe('enhancedDate', function () {
 	describe('isFuture', function () {
 
 		it('should return true if it is in the future', function () {
-			enhancedDate.setDate(new Date(2116, 5, 27));
+			enhancedDate.setDate(new Date(2116, 4, 27));
 		});
 
 		it('should return false if it is in the past', function () {
-			enhancedDate.setDate(new Date(2014, 5, 27));
+			enhancedDate.setDate(new Date(2014, 4, 27));
 			expect(enhancedDate.isFuture()).to.be.false;
 		});
 	});
