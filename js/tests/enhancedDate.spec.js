@@ -35,29 +35,31 @@ describe("enhancedDate", function () {
     // test getDayName function
     describe("getDayName", function() {
 
-        var myDate = enhancedDate.setDate(new Date(2015, 6, 4));
- 
-        it("should return a string", function () {
-            expect(enhancedDate.getDayName(myDate)).to.be.a("String");
+        before(function () {
+            enhancedDate.setDate(new Date(2015, 6, 4));
         });
+        
+        //console.log(enhancedDate.getDayName());
+        it("should return a string", function () {
+             expect(enhancedDate.getDayName()).to.be.a("String");
+         });
 
-        it("should return Saturday for 7/4/2015", function () { 
-            expect(enhancedDate.getDayName(myDate)).to.equal("Saturday");
+        it("should return Saturday for 7/4/2015", function () {
+            expect(enhancedDate.getDayName()).to.equal("Saturday");
         }); 
     });
     
     // test getMonthName function
     describe("getMonthName", function () {
 
-        var myDate = enhancedDate.setDate(new Date(2015, 6, 4));
+        enhancedDate.setDate(new Date(2015, 6, 4));
               
         it("should return a string", function () {
-            expect(enhancedDate.getMonthName(myDate)).to.be.a("String");
+            expect(enhancedDate.getMonthName()).to.be.a("String");
         });
 
         it("should return July for 7/4/2015", function () {  
-        	myDate = enhancedDate.setDate(new Date(2015, 6, 4));
-            expect(enhancedDate.getMonthName(myDate)).to.equal("July");
+            expect(enhancedDate.getMonthName()).to.equal("July");
         });
     });
 
