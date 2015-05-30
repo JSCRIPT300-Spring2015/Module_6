@@ -13,17 +13,15 @@ describe("Enhanced date", function () {
 		});
 	});
 
-	describe("setDate", function() {		
-
+	describe("setDate", function() {
 		it("should return instanceof date", function () {
         	expect(enhancedDate.setDate(new Date("05-23-2015"))).to.be.an.instanceof(Date);        	
+		});	
+		it("year should be equal to that of date passed", function() {
+			var dt = enhancedDate.setDate(new Date("05-23-2015"));			
+			expect(dt.getFullYear()).to.be.equal(2015);
 		});
-		it("should execute fast", function (done) {
-        	expect(enhancedDate.setDate(new Date("05-23-2015"))).to.be.an.instanceof(Date); 
-        	done();       	
-		});
-	});
-
+	});			
 	describe("getDate", function() {
 		before(function() {
 			enhancedDate.setDate(new Date("05-23-2015"));
