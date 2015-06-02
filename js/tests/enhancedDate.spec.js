@@ -23,12 +23,10 @@ describe("Test", function () {
 
 	beforeEach(function(){
 		myDate = enhancedDate;
-		myDate.setDate(2015,4,14);
+		myDate.setDate(new Date(2015,4,14));
 	});
 	
 	it("should be Thursday", function(){	
-		//testDate = myDate.setDate(2015,4,14);
-		//console.log(myDate.setDate(2015,4,14));
 		var myDay = myDate.getDayName();
 		expect(myDay).to.equal('Thursday');
 	});
@@ -46,7 +44,9 @@ describe("Test", function () {
 	});
 	
 	it("should be 2015", function(){
-		expect(myDate.getDate()).to.equal(2015);
+		//get year out of returned date number
+		extractedYear = new Date(myDate.getDate()).getFullYear();
+		expect(extractedYear).to.equal(2015);
 	});
 	
 	it("should be an string", function(){
