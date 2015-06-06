@@ -1,8 +1,13 @@
+<!--
+This is the "Mocha test driver" page.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Module_6 Assignment Tests</title>
+    <!-- this mocha.css will format our page so it makes it handy to use -->
 	<link rel="stylesheet" href="js/libs/mocha.css"/>
 </head>
 <body>
@@ -11,7 +16,10 @@
 	<script src="js/libs/mocha.js"></script>
 	<script src="js/libs/chai.js"></script>
 	<script>
-		var expect = chai.expect;
+		// variable so we can use expect insted of writing chai.expect
+        var expect = chai.expect;
+        
+        // sets the mocha configuration
 		mocha.setup({
 			ui: "bdd",
 			ignoreLeaks: true
